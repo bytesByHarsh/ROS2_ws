@@ -18,12 +18,11 @@ sudo apt install ros-galactic-turtlebot3
 ```
 
 ```bash
-cd src
-git clone -b galactic-devel https://github.com/ROBOTIS-GIT/turtlebot3_simulations.git
-cd ..
+git submodule update --init --recursive
 colcon build --symlink-install
 . install/local_setup.bash
 . install/setup.bash
+source install/setup.bash
 
 export TURTLEBOT3_MODEL=burger
 ros2 launch turtlebot3_gazebo empty_world.launch.py
